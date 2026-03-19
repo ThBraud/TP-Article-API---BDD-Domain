@@ -12,11 +12,10 @@ import java.util.stream.Collectors;
 public class DAOArticleSQL implements IDAOArticle {
 
     private final ArticleSQLRepository repository;
-
+//region Avoir tout les articles
     public DAOArticleSQL(ArticleSQLRepository repository) {
         this.repository = repository;
     }
-
     @Override
     public List<Article> getAll() {
         List<ArticleSQL> articlesSQL = repository.findAll();
@@ -30,13 +29,17 @@ public class DAOArticleSQL implements IDAOArticle {
                 })
                 .collect(Collectors.toList());
     }
+//endregion
 
+//region Avoir un article selon son ID
     @Override
     public Optional<Article> findById(String id) {
         return repository.findById(Long.parseLong(id))
                 .map(this::toArticle);
     }
+//endregion
 
+//region Pour la modification ou création d'un article
     @Override
     public boolean existsByTitle(String title) {
         return repository.existsByTitle(title);
@@ -53,7 +56,9 @@ public class DAOArticleSQL implements IDAOArticle {
         ArticleSQL saved = repository.save(articleSQL);
         return toArticle(saved);
     }
+//endregion
 
+//region Supprimer un Article
     @Override
     public boolean deleteById(String id) {
         if (repository.existsById(Long.parseLong(id))) {
@@ -62,7 +67,9 @@ public class DAOArticleSQL implements IDAOArticle {
         }
         return false;
     }
+//endregion
 
+//region Conversion SQL
     // Méthodes de conversion
     private Article toArticle(ArticleSQL articleSQL) {
         Article article = new Article();
@@ -81,4 +88,5 @@ public class DAOArticleSQL implements IDAOArticle {
         articleSQL.setDescription(article.description);
         return articleSQL;
     }
+//endregion
 }

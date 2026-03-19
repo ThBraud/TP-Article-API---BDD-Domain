@@ -13,20 +13,26 @@ public class ArticleService {
 
     @Autowired
     IDAOArticle daoArticle;
-
+//region Pour avoir la liste de tout les articles
     public List<Article> getAllArticles(){
 
         return daoArticle.getAll();
     }
+// endregion
 
+//region Avoir un article selon son ID
     public Optional<Article> getArticleById(String id) {
         return daoArticle.findById(id);
     }
+//endregion
 
+//region Supprimer un article
     public boolean deleteArticle(String id) {
         return daoArticle.deleteById(id);
     }
+//endregion
 
+//region Modification et création d'un article
     public ArticleServiceResult saveArticle(Article article) {
         boolean isUpdate = article.id != null && !article.id.isEmpty();
 
@@ -68,5 +74,6 @@ public class ArticleService {
             this.article = article;
         }
     }
+//endregion
 }
 

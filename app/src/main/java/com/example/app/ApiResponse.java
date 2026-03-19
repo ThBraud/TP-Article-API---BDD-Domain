@@ -1,5 +1,5 @@
 package com.example.app;
-
+// L'ApiResponse sert pour les messages de réponse
 public class ApiResponse {
         private String code;
         private String message;
