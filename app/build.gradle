@@ -7,7 +7,6 @@ plugins {
 
 dependencies {
     implementation project(':core-domain')
-    //implementation project (':adapter-mock')
     implementation project(':adapter-jpa')
     //implementation project (':adapter-mongo')
 
