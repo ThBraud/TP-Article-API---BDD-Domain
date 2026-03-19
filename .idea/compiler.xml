@@ -5,6 +5,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo-domain-java.adapter-jpa" options="-parameters" />
+      <module name="demo-domain-java.adapter-jpa.main" options="-parameters" />
+      <module name="demo-domain-java.adapter-jpa.test" options="-parameters" />
       <module name="demo-domain-java.adapter-mock" options="-parameters" />
       <module name="demo-domain-java.adapter-mock.main" options="-parameters" />
       <module name="demo-domain-java.adapter-mock.test" options="-parameters" />

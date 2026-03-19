@@ -7,7 +7,7 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/db_tp
   datasource:
-    url: jdbc:mysql://localhost:3306/db_movie?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/db_tp?useSSL=false&serverTimezone=UTC
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -2,6 +2,6 @@
 rootProject.name = 'demo-domain-java'
 
 include 'core-domain'
-//include 'adapter-jpa'
-include 'adapter-mongo'
+include 'adapter-jpa'
+//include 'adapter-mongo'
 include 'app'
